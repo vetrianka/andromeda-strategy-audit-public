@@ -55,3 +55,60 @@ For each private file:
 Past ledger entries should not be silently edited.
 
 If an error is found, a new correction entry should be added with an explanation in the `notes` column.
+
+
+## Public ledger timing
+
+This public repository stores SHA256 hashes of private audit files.
+
+GitHub API timestamps are UTC ISO 8601 timestamps. The public ledger uses UTC timestamps in the `created_utc` column.
+
+Regular NYSE core trading opens at 9:30 a.m. Eastern Time.
+
+This is normally:
+
+- 14:30 UTC during US Eastern Standard Time;
+- 13:30 UTC during US Eastern Daylight Time.
+
+For a daily target file to be valid for the next US market open, the public ledger entry containing its SHA256 must be published at least 1 hour before the regular US equity market open.
+
+Therefore, the usual cutoff is normally:
+
+- 13:30 UTC during US Eastern Standard Time;
+- 12:30 UTC during US Eastern Daylight Time.
+
+If a daily target file is missing, or if its public ledger entry is published less than 1 hour before the next regular US equity market open, the next-day portfolio is not changed. The previously effective target weights are carried forward.
+
+## Daily private target file format
+
+Daily private target files are stored in the private repository under:
+
+`signals/YYYY/YYYY-MM-DD.targets.csv`
+
+The daily target file schema is:
+
+`date,ticker,candles_w,optimizer_w,swing_long_w,short_w,long_w,short_abs_w,net_w`
+
+The `date` column is the signal calculation date.
+
+The daily file does not contain an explicit planned rebalance date.
+
+The target portfolio is implemented at the open of the next US trading day after `date`.
+
+## Universe file
+
+The private repository should contain:
+
+`universe/andromeda_universe_351.csv`
+
+This file contains the strategy universe, one ticker per row.
+
+The public repository stores only the SHA256 hash of that private universe file.
+
+## Price adjustment policy
+
+Portfolio returns are calculated using corporate-action-adjusted prices.
+
+Open-to-open returns should be calculated from adjusted open prices derived consistently with the adjusted close series.
+
+The public ledger may contain hashes of private return or price-derived audit files, but not the private data itself.
