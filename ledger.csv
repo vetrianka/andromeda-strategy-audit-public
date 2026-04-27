@@ -1,1 +1,1 @@
-date,artifact_type,private_file_name,sha256,row_count,file_size_bytes,created_utc,notes
+published_date,strategy_id,package_id,artifact_type,file_date,period,private_file_name,sha256,row_count,file_size_bytes,created_utc,publication_cutoff_utc,timeliness_status,notes
