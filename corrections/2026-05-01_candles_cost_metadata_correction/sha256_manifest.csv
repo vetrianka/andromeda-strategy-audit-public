@@ -1,0 +1,6 @@
+file,sha256,file_size_bytes,description
+strategy_metadata.original.json,754466b037d07a0a06da90b6cf8195d0bda0d78c9fdfd54bd1de974fa2362a5b,5828,Original private metadata file containing the candles sleeve cost metadata error
+strategy_metadata.corrected.json,617e81b65f7627d5bf81e5028c7ec7e8268b4c0f0481d76d8e2224b0863db9e3,6829,Corrected private metadata file with candles one-way cost set to 10 bps and corrected OOS metrics
+strategy_metadata.diff,286e42f0c293d91e9701405a59e39d9eadc7c2c936f3bbbc53ba9f3ae6696662,2771,Unified diff between original and corrected strategy metadata
+correction_payload.json,3ebf86e32ec5ecb7f0e60763827bfee0774c6853fa87370fd3f655e9e41e206a,2698,Machine-readable hardcoded correction payload
+CORRECTION.md,f5222782b071f96b08dd1a895cfebd8d489267330e60253f4659b2b5af47315d,2455,Private human-readable correction notice
