@@ -35,3 +35,7 @@ That material is retained for transparency only and is excluded from active caus
 ## Repository role
 
 Repository role: public hash ledger and public audit metadata.
+
+## File role
+
+This file defines the active audit boundary. It states that active public evidence is created through ledger.csv and that legacy/old is retained for transparency but excluded from active publication claims.
