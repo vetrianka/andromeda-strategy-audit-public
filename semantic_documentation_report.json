@@ -5,6 +5,8 @@
   "created_utc": "2026-06-18T11:17:06Z",
   "legacy_root": "legacy/old/",
   "protocol_id": "multi_strategy_audit_publication_v1",
+  "publication_protocol_id": "multi_strategy_audit_publication_v1",
   "purpose": "Replace maintenance-style wording with human semantic descriptions of files, directories, and ledger comments.",
+  "record_description": "Machine-readable record that repository documentation was rewritten to describe file contents and directory roles rather than maintenance actions.",
   "repository_role": "public"
 }
