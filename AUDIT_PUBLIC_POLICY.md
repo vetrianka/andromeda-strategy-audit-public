@@ -1,6 +1,6 @@
 # Public Audit Policy
 
-This repository stores public SHA256 commitments for private Orion audit files.
+This repository stores public SHA256 commitments for private strategy audit files.
 
 It must not contain private strategy signals, target weights, model scores, private returns, raw market data, or internal research artifacts.
 

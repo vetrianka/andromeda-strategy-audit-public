@@ -252,5 +252,9 @@
       "status": "done"
     }
   ],
-  "warnings": []
+  "warnings": [],
+  "publication_protocol_id": "multi_strategy_audit_publication_v1",
+  "publication_protocol_scope": "strategy-neutral multi-strategy audit publication",
+  "strategy_naming_note": "Strategy identifiers such as orion are registry entries, not names of the repository, protocol, or ledger schema.",
+  "legacy_root": "legacy/old"
 }

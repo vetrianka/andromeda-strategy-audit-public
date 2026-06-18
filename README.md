@@ -1,16 +1,16 @@
 # Multi-Strategy Audit Public Ledger
 
-This repository is the public audit ledger for multiple strategy publication streams.
+This repository is the public audit ledger for strategy publication streams.
 
 It does not contain private trading signals, positions, model scores, strategy internals, private returns, or raw market data. It contains public cryptographic commitments and audit metadata.
 
 ## Active scope
 
-Active audited publication starts with the Git commit that adds `scope.md` and this Orion audit layout.
+Active audited publication starts with the Git commit that adds `scope.md` and the strategy-neutral multi-strategy layout.
 
 - scope_start_date: 2026-06-18
-- active strategy ids at migration: orion
-- deprecated legacy strategy id: synthetic_candles_optimizer_swinglong_plus_swingls_short_borrow300
+- active strategy registry: `strategy_registry.csv`
+- deprecated legacy strategy id: `synthetic_candles_optimizer_swinglong_plus_swingls_short_borrow300`
 
 Legacy non-causal material has been moved to:
 
@@ -28,7 +28,7 @@ private file
 
 ## Main files
 
-- `ledger.csv` — active public hash ledger for new multi-strategy publications.
+- `ledger.csv` — active public hash ledger for new strategy publications.
 - `strategy_registry.csv` — active and deprecated strategy registry.
 - `scope.md` — explicit audit scope and migration boundary.
 - `AUDIT_PUBLIC_POLICY.md` — public publication policy.
@@ -40,6 +40,10 @@ The private repository is expected to store active private artifacts under:
 `artifacts/{strategy_id}/{period}/...`
 
 The public ledger records the private path and SHA256 for each published private artifact.
+
+## Strategy names
+
+A strategy id in `strategy_registry.csv` is not the name of this repository, not the name of the publication protocol, and not the name of the ledger format. The publication protocol is strategy-neutral.
 
 ## Correction policy
 
