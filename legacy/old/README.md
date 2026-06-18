@@ -1,15 +1,9 @@
-# Deprecated Legacy Material
+# Deprecated Legacy Archive
 
-This directory contains files from the previous non-causal single-strategy repository layout.
+This directory contains deprecated public material from the pre-migration single-strategy repository.
 
-Repository role: public
+It is kept for transparency and historical traceability only.
 
-Deprecated strategy id:
+Files in this directory are excluded from the active public ledger scope and must not be used as active causal publication evidence.
 
-`synthetic_candles_optimizer_swinglong_plus_swingls_short_borrow300`
-
-These files were moved here during the multi-strategy migration on 2026-06-18.
-
-They are retained only for historical transparency and are excluded from the active audit scope.
-
-Do not use these files for active causal performance claims, production audit evidence, or new publications.
+The active public ledger is the root-level `ledger.csv`. Active private artifacts are expected under the private repository path `artifacts/{strategy_id}/{period}/...`.
