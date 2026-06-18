@@ -66,6 +66,7 @@ Publish a new row and link it with:
 - `correction_of`
 - `supersedes_sha256`
 
+
 ## File role
 
 This file defines public-side rules for ledger coverage, correction rows, meaningful artifact comments, and publisher-computed proof fields. It is repository documentation, not a trading artifact.
