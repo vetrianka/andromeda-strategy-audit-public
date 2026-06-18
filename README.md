@@ -39,6 +39,7 @@ Deprecated pre-migration material is kept under:
 
 It is retained for transparency only and is outside the active audit scope.
 
+
 ## File role
 
 This file is the public entry point for the audit ledger repository. It explains what the repository contains, what it does not contain, how the public ledger relates to private artifacts, and where legacy material is kept.
