@@ -43,3 +43,7 @@ A good comment should be:
 - not a commit message;
 - not a marketing claim;
 - not a performance claim unless the file itself is a performance report.
+
+## File role
+
+This file gives examples of good and bad ledger comments. A good ledger comment describes the contents and audit role of a private artifact; it does not repeat a repository maintenance commit message.
