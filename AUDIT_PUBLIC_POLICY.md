@@ -1,63 +1,40 @@
 # Public Audit Policy
 
-This repository contains public SHA256 commitments for private strategy audit files.
+This repository stores public SHA256 commitments for private Orion audit files.
 
-It does not contain private strategy signals, positions, weights, returns, scores, or raw market data.
+It must not contain private strategy signals, target weights, model scores, private returns, raw market data, or internal research artifacts.
 
-## Timestamp convention
+## Scope boundary
 
-GitHub API timestamps are UTC ISO 8601 timestamps.
+The active audit scope starts with the migration commit that creates `scope.md`.
 
-The public ledger uses UTC timestamps in the `created_utc` column.
+Legacy non-causal material is archived under:
 
-## US market open and cutoff rule
+`legacy/old/`
 
-Regular US equity core trading opens at 9:30 a.m. Eastern Time.
+Archived legacy material is retained for transparency but excluded from active causal audit claims.
 
-This is normally:
+## Ledger rule
 
-- 14:30 UTC during US Eastern Standard Time;
-- 13:30 UTC during US Eastern Daylight Time.
+The active ledger is `ledger.csv`.
 
-For a daily target file to be valid for the next US market open, its SHA256 must be published in the public ledger at least 1 hour before the regular US equity market open.
+The publisher computes and records:
 
-The usual cutoff is normally:
+- SHA256;
+- file size;
+- row count when applicable;
+- publication timestamp;
+- timeliness status;
+- private commit id;
+- public commit id when available;
+- publisher run id.
 
-- 13:30 UTC during US Eastern Standard Time;
-- 12:30 UTC during US Eastern Daylight Time.
+Owner-supplied manifest fields such as `comment`, `notes`, `source_script`, and `methodology_version` are copied into the ledger. The publisher must not invent the business meaning of a file.
 
-## Missing or late file rule
+## Correction rule
 
-If a daily target file is missing, or if its public ledger entry is published less than 1 hour before the next regular US equity market open, the next-day portfolio is not changed.
+Never edit a published ledger row to make a different file appear original. Publish a correction row with a new artifact path, `correction_of`, and `supersedes_sha256`.
 
-The previously effective target weights are carried forward.
+## Daily target cutoff rule
 
-A late file may be recorded in the ledger with `timeliness_status = late_ignored`, but it is not valid for the next open rebalance.
-
-If no valid file exists, a `daily_no_change_marker` row may be recorded with `timeliness_status = missing_no_change`.
-
-## Private daily target format
-
-The private daily target file schema is:
-
-`date,ticker,candles_w,optimizer_w,swing_long_w,short_w,long_w,short_abs_w,net_w`
-
-The `date` column is the signal calculation date.
-
-The file does not contain an explicit planned rebalance date.
-
-The target portfolio is implemented at the open of the next US trading day after `date`.
-
-## Universe file
-
-The strategy universe is stored privately as:
-
-`universe/andromeda_universe_351.csv`
-
-The public ledger stores only the SHA256 of this file.
-
-## Price adjustment policy
-
-Portfolio returns are calculated using corporate-action-adjusted prices.
-
-Open-to-open returns should be calculated from adjusted open prices derived consistently with the adjusted close series.
+When a strategy defines a next-open execution rule, its daily target hash must be published before the strategy-specific cutoff. Late files may be recorded with `timeliness_status = late_ignored`, but they are not valid for that rebalance.
