@@ -60,6 +60,7 @@ Commit messages describe repository changes. Ledger comments describe file conte
 
 Never use a repository maintenance phrase as a ledger artifact comment.
 
+
 ## File role
 
 This file defines the strategy-neutral publication process: producer manifest, publisher validation, private artifact storage, and public hash-ledger publication. It is not named after any single strategy.
