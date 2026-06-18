@@ -1,50 +1,40 @@
-# Multi-Strategy Audit Public Ledger
+# Public Audit Ledger Repository
 
-This repository is the public audit ledger for strategy publication streams.
+This repository stores public integrity records for one or more private strategy publication streams.
 
-It does not contain private trading signals, positions, model scores, strategy internals, private returns, or raw market data. It contains public cryptographic commitments and audit metadata.
+It does not contain private target files, model scores, strategy internals, private returns, or raw market data. It contains public hashes and metadata that allow later verification of private artifacts.
 
-## Active scope
+The publication protocol is strategy-neutral:
 
-Active audited publication starts with the Git commit that adds `scope.md` and the strategy-neutral multi-strategy layout.
+`multi_strategy_audit_publication_v1`
 
-- scope_start_date: 2026-06-18
-- active strategy registry: `strategy_registry.csv`
-- deprecated legacy strategy id: `synthetic_candles_optimizer_swinglong_plus_swingls_short_borrow300`
+The current active strategy id is:
 
-Legacy non-causal material has been moved to:
+- `orion` — Orion
 
-`legacy/old/`
+## Main public files
 
-That directory is retained only for historical transparency. It must not be used for active causal performance claims or production audit evidence.
+- `ledger.csv` — public hash ledger for active private artifacts.
+- `strategy_registry.csv` — registry of active and deprecated strategy ids.
+- `scope.md` — audit boundary and active-scope rules.
+- `AUDIT_PUBLIC_POLICY.md` — public ledger and correction rules.
+- `PUBLICATION_PROTOCOL.md` — producer/publisher workflow.
+- `DIRECTORY_INDEX.md` — human-readable directory and file map.
+- `FILE_CATALOG.csv` — machine-readable catalog of current repository paths.
+- `LEDGER_COMMENT_GUIDE.md` — rules and examples for meaningful artifact comments.
 
-## Public audit chain
+## Active ledger coverage
 
-private file  
-→ SHA256  
-→ public ledger row  
-→ public Git commit / release  
-→ later independent verification by recomputing the SHA256 of the private file
-
-## Main files
-
-- `ledger.csv` — active public hash ledger for new strategy publications.
-- `strategy_registry.csv` — active and deprecated strategy registry.
-- `scope.md` — explicit audit scope and migration boundary.
-- `AUDIT_PUBLIC_POLICY.md` — public publication policy.
-
-## Active artifact paths
-
-The private repository is expected to store active private artifacts under:
+The active ledger is intended to cover publishable files under the private repository path:
 
 `artifacts/{strategy_id}/{period}/...`
 
-The public ledger records the private path and SHA256 for each published private artifact.
+The active ledger is not intended to cover repository documentation, Git placeholder files, Git configuration files, or `legacy/old/`.
 
-## Strategy names
+## Legacy material
 
-A strategy id in `strategy_registry.csv` is not the name of this repository, not the name of the publication protocol, and not the name of the ledger format. The publication protocol is strategy-neutral.
+Deprecated pre-migration material is kept under:
 
-## Correction policy
+`legacy/old/`
 
-Published private paths must not be silently overwritten. If a correction is required, publish a new artifact path and link it through `correction_of` and `supersedes_sha256` in the public ledger.
+It is retained for transparency only and is outside the active audit scope.

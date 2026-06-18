@@ -1,35 +1,37 @@
 # Audit Scope
 
-This repository was reorganized on 2026-06-18 to support auditable strategy publications.
+This repository was reorganized on 2026-06-18 to support a strategy-neutral public audit ledger.
 
-## Active scope start
+## Active scope
 
-The active audited publication scope starts with the Git commit that adds this `scope.md` file and the strategy-neutral multi-strategy layout.
+The active public scope is the ledger-based publication process defined by:
 
-This wording is intentional: the commit containing this file is the boundary. No pre-migration file is silently promoted into the active causal audit scope.
+`multi_strategy_audit_publication_v1`
 
-## Deprecated legacy material
+New active artifacts are proven by rows in:
 
-Files related to the previous non-causal single-strategy layout were moved to:
+`ledger.csv`
+
+Each active ledger row should point to a private path under:
+
+`artifacts/{strategy_id}/{period}/...`
+
+## Strategy ids
+
+Current active strategy id at this migration boundary:
+
+- `orion` — Orion
+
+The publication protocol is not named after this strategy. Additional strategies can be added later.
+
+## Legacy material
+
+Deprecated pre-migration material is stored under:
 
 `legacy/old/`
 
-Deprecated legacy material is retained only for historical transparency. It must not be used for active causal performance claims, production audit evidence, or new strategy publications.
-
-## Active publication rule
-
-Only artifacts referenced by new active ledger rows created after this migration boundary are part of the current audit publication process.
-
-## Strategy registry
-
-Active and deprecated strategy identifiers are listed in `strategy_registry.csv`.
-
-A strategy identifier is not the name of the repository, not the name of the publication protocol, and not the name of the ledger schema.
-
-## Deprecated strategy id
-
-`synthetic_candles_optimizer_swinglong_plus_swingls_short_borrow300`
+That material is retained for transparency only and is excluded from active causal publication claims.
 
 ## Repository role
 
-Repository role: public
+Repository role: public hash ledger and public audit metadata.

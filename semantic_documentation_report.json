@@ -1,0 +1,10 @@
+{
+  "active_strategy_display_name": "Orion",
+  "active_strategy_id": "orion",
+  "adhoc_definition": "Important non-scheduled material: major change history, unusual reports, incident reviews, methodology notes, one-off reconciliation packages, and other non-periodic documents.",
+  "created_utc": "2026-06-18T11:17:06Z",
+  "legacy_root": "legacy/old/",
+  "protocol_id": "multi_strategy_audit_publication_v1",
+  "purpose": "Replace maintenance-style wording with human semantic descriptions of files, directories, and ledger comments.",
+  "repository_role": "public"
+}

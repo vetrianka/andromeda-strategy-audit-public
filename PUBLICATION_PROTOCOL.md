@@ -1,45 +1,61 @@
-# Audit Publication Protocol
+# Publication Protocol
 
-Protocol id: `multi_strategy_audit_publication_v1`
+Protocol id:
 
-This protocol is strategy-neutral.
+`multi_strategy_audit_publication_v1`
 
-A strategy-specific producer creates finalized artifacts and an owner-supplied manifest. The publisher then computes technical evidence, copies the private file into the private repository, and records a public ledger row.
+This protocol is independent of any single strategy. A strategy is identified by `strategy_id`, for example `orion`.
 
-## Separation of responsibilities
+## Roles
 
-Producer-owned fields:
+### Producer
 
-- `strategy_id`
-- `package_id`
-- `artifact_type`
-- `period`
-- `file_date` / `period_start` / `period_end`
-- `private_file_name`
-- `source_script`
-- `methodology_version`
-- `comment`
-- `notes`
-- `correction_of` when applicable
+A producer is the strategy-specific script or workflow that creates a file.
 
-Publisher-computed fields:
+The producer knows:
 
-- `sha256`
-- `row_count`
-- `file_size_bytes`
-- `published_utc`
-- `timeliness_status`
-- `private_commit`
-- `public_commit`
-- `publisher_run_id`
-- `publisher_note` when applicable
+- what the file contains;
+- which strategy it belongs to;
+- whether it is daily, monthly, or adhoc;
+- the correct human comment for the file;
+- the source script and methodology label.
 
-## Private artifact layout
+The producer should write a publication manifest into an outbox. The manifest should contain owner-supplied metadata such as `strategy_id`, `period`, `artifact_type`, `private_repo_path`, `comment`, `notes`, `source_script`, and `methodology_version`.
+
+### Publisher
+
+The publisher is strategy-neutral. It does not decide what a file means.
+
+The publisher:
+
+1. reads the manifest;
+2. validates the file and destination path;
+3. computes SHA256, size, and row count when applicable;
+4. copies the artifact into the private repository;
+5. commits the private artifact;
+6. appends the public ledger row;
+7. publishes the public ledger change.
+
+## Standard periods
+
+- `daily`: scheduled daily outputs tied to a date or trading session.
+- `monthly`: scheduled monthly reports and reconciliation files.
+- `adhoc`: important non-scheduled material, such as major change history, unusual reports, incident reviews, methodology notes, and one-off reconciliation packages.
+
+## Active artifact path convention
 
 `artifacts/{strategy_id}/{period}/...`
 
-Recommended periods are `daily`, `monthly`, and `adhoc`.
+Examples:
 
-## Legacy boundary
+`artifacts/orion/daily/2026/2026-06-18.targets.csv`
 
-Deprecated legacy material is retained under `legacy/old/` for transparency and is outside the active audit scope.
+`artifacts/orion/monthly/2026/2026-06/monthly_report.pdf`
+
+`artifacts/orion/adhoc/2026/2026-06-18_publication_change_note.md`
+
+## Comment rule
+
+Commit messages describe repository changes. Ledger comments describe file contents.
+
+Never use a repository maintenance phrase as a ledger artifact comment.
