@@ -1,3 +1,3 @@
 strategy_id,display_name,status,scope_start_date,artifact_root,description
-orion,Orion,active,2026-06-18,artifacts/orion/,Current active strategy publication stream. Active private artifacts are expected under artifacts/orion/ and public proof is recorded in ledger.csv.
-synthetic_candles_optimizer_swinglong_plus_swingls_short_borrow300,Deprecated pre-migration strategy,deprecated_noncausal_legacy,2026-06-18,legacy/old/,Historical pre-migration single-strategy material retained for transparency only. Excluded from active ledger completeness and active causal publication claims.
+orion,Orion,active,2026-06-18,artifacts/orion/,Current active strategy publication stream. The strategy id is orion; the publication protocol remains strategy-neutral.
+synthetic_candles_optimizer_swinglong_plus_swingls_short_borrow300,Deprecated pre-migration strategy,deprecated_noncausal_legacy,2026-06-18,legacy/old/,Historical pre-migration single-strategy material retained for transparency only and excluded from active publication claims.
