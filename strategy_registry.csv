@@ -1,3 +1,3 @@
-strategy_id,status,scope_start_date,scope_start_rule,description
-orion,active,2026-06-18,active audited scope starts with the migration commit that creates scope.md,Active Orion audit publication stream for orion.
-synthetic_candles_optimizer_swinglong_plus_swingls_short_borrow300,deprecated_noncausal_legacy,2026-06-18,deprecated at the migration commit that creates scope.md,Deprecated historical non-causal single-strategy material retained only for transparency; not part of active audit scope.
+strategy_id,display_name,status,scope_start_date,scope_start_rule,description
+orion,Orion,active,2026-06-18,active audited scope starts with the migration commit that creates scope.md,"Active strategy publication stream. Orion is a strategy identifier, not the name of the audit publication protocol."
+synthetic_candles_optimizer_swinglong_plus_swingls_short_borrow300,Deprecated legacy strategy,deprecated_noncausal_legacy,2026-06-18,deprecated at the migration commit that creates scope.md,Deprecated historical non-causal single-strategy material retained only for transparency; not part of active audit scope.
