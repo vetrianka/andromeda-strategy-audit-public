@@ -1,14 +1,16 @@
 {
-  "created_utc": "2026-06-18T09:44:11Z",
-  "repo_label": "public",
-  "reason": "Git for Windows failed to index a legacy archive file because the migration prefix made the full path too long.",
-  "repair": "Shortened legacy archive root from legacy_deprecated/old_noncausal_strategy to legacy/old and set local git core.longpaths=true.",
-  "old_legacy_root": "legacy_deprecated/old_noncausal_strategy",
-  "new_legacy_root": "legacy/old",
-  "publication_protocol_id": "multi_strategy_audit_publication_v1",
-  "publication_protocol_scope": "strategy-neutral multi-strategy audit publication",
   "active_strategy_ids_at_repair": [
     "orion"
   ],
+  "created_utc": "2026-06-18T09:44:11Z",
+  "legacy_root": "legacy/old/",
+  "new_legacy_root": "legacy/old",
+  "old_legacy_root": "legacy_deprecated/old_noncausal_strategy",
+  "publication_protocol_id": "multi_strategy_audit_publication_v1",
+  "publication_protocol_scope": "strategy-neutral multi-strategy audit publication",
+  "reason": "Git for Windows failed to index a legacy archive file because the migration prefix made the full path too long.",
+  "record_description": "Machine-readable record of the path-shortening repair that moved deprecated material under legacy/old to avoid Windows and Git path-length problems.",
+  "repair": "Shortened legacy archive root from legacy_deprecated/old_noncausal_strategy to legacy/old and set local git core.longpaths=true.",
+  "repo_label": "public",
   "strategy_naming_note": "Strategy identifiers such as orion are registry entries, not names of the repository, protocol, or ledger schema."
 }
