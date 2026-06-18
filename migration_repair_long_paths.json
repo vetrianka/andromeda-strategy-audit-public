@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-06-18T09:44:11Z",
+  "repo_label": "public",
+  "reason": "Git for Windows failed to index a legacy archive file because the migration prefix made the full path too long.",
+  "repair": "Shortened legacy archive root from legacy_deprecated/old_noncausal_strategy to legacy/old and set local git core.longpaths=true.",
+  "old_legacy_root": "legacy_deprecated/old_noncausal_strategy",
+  "new_legacy_root": "legacy/old",
+  "active_strategy_id": "orion",
+  "active_strategy_display_name": "Orion"
+}

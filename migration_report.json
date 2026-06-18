@@ -1,0 +1,256 @@
+{
+  "run_utc": "2026-06-18T09:39:45Z",
+  "mode": "apply",
+  "private_repo": "R:\\audit-github\\andromeda-strategy-audit-private",
+  "public_repo": "R:\\audit-github\\andromeda-strategy-audit-public",
+  "scope_start_date": "2026-06-18",
+  "old_strategy_id": "synthetic_candles_optimizer_swinglong_plus_swingls_short_borrow300",
+  "legacy_name": "old_noncausal_strategy",
+  "active_strategies": [
+    "orion"
+  ],
+  "branch": "main",
+  "git": {
+    "private_was_git_repo": true,
+    "public_was_git_repo": true,
+    "private_head_before_or_current": "9c4c583af620923742303c1eb18a64d3a819c7f2",
+    "public_head_before_or_current": "429407526359fd2186a1c07252a33ccba27f38e9",
+    "private_commit_after": "",
+    "public_commit_after": ""
+  },
+  "operations": [
+    {
+      "op": "move",
+      "repo_role": "public",
+      "src": "README.md",
+      "dst": "legacy/old/original_README.md",
+      "detail": "archive legacy path",
+      "status": "done"
+    },
+    {
+      "op": "move",
+      "repo_role": "public",
+      "src": "AUDIT_PUBLIC_POLICY.md",
+      "dst": "legacy/old/original_AUDIT_PUBLIC_POLICY.md",
+      "detail": "archive legacy path",
+      "status": "done"
+    },
+    {
+      "op": "move",
+      "repo_role": "public",
+      "src": "ledger.csv",
+      "dst": "legacy/old/legacy_ledger.csv",
+      "detail": "archive legacy path",
+      "status": "done"
+    },
+    {
+      "op": "move",
+      "repo_role": "public",
+      "src": "corrections",
+      "dst": "legacy/old/corrections",
+      "detail": "archive legacy path",
+      "status": "done"
+    },
+    {
+      "op": "move",
+      "repo_role": "public",
+      "src": "snapshots",
+      "dst": "legacy/old/snapshots",
+      "detail": "archive legacy path",
+      "status": "done"
+    },
+    {
+      "op": "move",
+      "repo_role": "public",
+      "src": "test_please_ignore",
+      "dst": "legacy/old/test_please_ignore",
+      "detail": "archive legacy path",
+      "status": "done"
+    },
+    {
+      "op": "write",
+      "repo_role": "public",
+      "src": "README.md",
+      "dst": "",
+      "detail": "create/replace text file",
+      "status": "done"
+    },
+    {
+      "op": "write",
+      "repo_role": "public",
+      "src": "AUDIT_PUBLIC_POLICY.md",
+      "dst": "",
+      "detail": "create/replace text file",
+      "status": "done"
+    },
+    {
+      "op": "write",
+      "repo_role": "public",
+      "src": "scope.md",
+      "dst": "",
+      "detail": "create/replace text file",
+      "status": "done"
+    },
+    {
+      "op": "write",
+      "repo_role": "public",
+      "src": "legacy/old/README.md",
+      "dst": "",
+      "detail": "create/replace text file",
+      "status": "done"
+    },
+    {
+      "op": "write_csv",
+      "repo_role": "public",
+      "src": "ledger.csv",
+      "dst": "",
+      "detail": "rows=0",
+      "status": "done"
+    },
+    {
+      "op": "write_csv",
+      "repo_role": "public",
+      "src": "strategy_registry.csv",
+      "dst": "",
+      "detail": "rows=2",
+      "status": "done"
+    },
+    {
+      "op": "move",
+      "repo_role": "private",
+      "src": "README.md",
+      "dst": "legacy/old/original_README.md",
+      "detail": "archive legacy path",
+      "status": "done"
+    },
+    {
+      "op": "move",
+      "repo_role": "private",
+      "src": "AUDIT_PRIVATE_POLICY.md",
+      "dst": "legacy/old/original_AUDIT_PRIVATE_POLICY.md",
+      "detail": "archive legacy path",
+      "status": "done"
+    },
+    {
+      "op": "move",
+      "repo_role": "private",
+      "src": "signals",
+      "dst": "legacy/old/signals",
+      "detail": "archive legacy path",
+      "status": "done"
+    },
+    {
+      "op": "move",
+      "repo_role": "private",
+      "src": "monthly",
+      "dst": "legacy/old/monthly",
+      "detail": "archive legacy path",
+      "status": "done"
+    },
+    {
+      "op": "move",
+      "repo_role": "private",
+      "src": "private_snapshots",
+      "dst": "legacy/old/private_snapshots",
+      "detail": "archive legacy path",
+      "status": "done"
+    },
+    {
+      "op": "move",
+      "repo_role": "private",
+      "src": "strategies",
+      "dst": "legacy/old/strategies",
+      "detail": "archive legacy path",
+      "status": "done"
+    },
+    {
+      "op": "move",
+      "repo_role": "private",
+      "src": "corrections",
+      "dst": "legacy/old/corrections",
+      "detail": "archive legacy path",
+      "status": "done"
+    },
+    {
+      "op": "move",
+      "repo_role": "private",
+      "src": "test_please_ignore",
+      "dst": "legacy/old/test_please_ignore",
+      "detail": "archive legacy path",
+      "status": "done"
+    },
+    {
+      "op": "move",
+      "repo_role": "private",
+      "src": "universe",
+      "dst": "legacy/old/universe",
+      "detail": "archive legacy path",
+      "status": "done"
+    },
+    {
+      "op": "ensure_dir",
+      "repo_role": "private",
+      "src": "artifacts/orion/daily",
+      "dst": "",
+      "detail": "create .gitkeep",
+      "status": "done"
+    },
+    {
+      "op": "ensure_dir",
+      "repo_role": "private",
+      "src": "artifacts/orion/monthly",
+      "dst": "",
+      "detail": "create .gitkeep",
+      "status": "done"
+    },
+    {
+      "op": "ensure_dir",
+      "repo_role": "private",
+      "src": "artifacts/orion/adhoc",
+      "dst": "",
+      "detail": "create .gitkeep",
+      "status": "done"
+    },
+    {
+      "op": "write",
+      "repo_role": "private",
+      "src": "README.md",
+      "dst": "",
+      "detail": "create/replace text file",
+      "status": "done"
+    },
+    {
+      "op": "write",
+      "repo_role": "private",
+      "src": "AUDIT_PRIVATE_POLICY.md",
+      "dst": "",
+      "detail": "create/replace text file",
+      "status": "done"
+    },
+    {
+      "op": "write",
+      "repo_role": "private",
+      "src": "scope.md",
+      "dst": "",
+      "detail": "create/replace text file",
+      "status": "done"
+    },
+    {
+      "op": "write",
+      "repo_role": "private",
+      "src": "legacy/old/README.md",
+      "dst": "",
+      "detail": "create/replace text file",
+      "status": "done"
+    },
+    {
+      "op": "write_csv",
+      "repo_role": "private",
+      "src": "strategy_registry.csv",
+      "dst": "",
+      "detail": "rows=2",
+      "status": "done"
+    }
+  ],
+  "warnings": []
+}
