@@ -3,10 +3,10 @@ AUDIT_PUBLIC_POLICY.md,file,repository_documentation,"Public-side policy for led
 DIRECTORY_INDEX.md,file,repository_documentation,Human-readable map of public repository directories and important files.
 LEDGER_COMMENT_GUIDE.md,file,repository_documentation,Guide for writing artifact comments that describe file contents instead of repository maintenance actions.
 PUBLICATION_PROTOCOL.md,file,repository_documentation,Strategy-neutral description of the producer-to-publisher-to-private-artifact-to-public-ledger workflow.
-README.md,file,repository_documentation,"Human overview of the public repository role, active ledger, and legacy boundary."
-ledger.csv,file,active_public_ledger,Active public hash ledger. Each row should describe one active private artifact and record its SHA256 and audit metadata.
+README.md,file,repository_documentation,"Public entry point explaining the repository purpose, public ledger role, and legacy boundary."
+ledger.csv,file,active_public_ledger,Active public hash ledger. Each row describes one active private artifact and records SHA256 plus audit metadata.
 legacy,directory,repository_documentation,Container for deprecated public material retained for transparency but excluded from active ledger scope.
-legacy/old,directory,deprecated_legacy,Deprecated pre-migration public material retained for historical transparency; excluded from active audit claims.
+legacy/old,directory,deprecated_legacy,Deprecated pre-migration public material retained for transparency and excluded from active audit claims.
 legacy/old/README.md,file,deprecated_legacy,Deprecated pre-migration public file retained for transparency and excluded from active scope.
 legacy/old/corrections,directory,deprecated_legacy,Deprecated pre-migration public file retained for transparency and excluded from active scope.
 legacy/old/corrections/2026-05-01_candles_cost_metadata_correction,directory,deprecated_legacy,Deprecated pre-migration public file retained for transparency and excluded from active scope.
