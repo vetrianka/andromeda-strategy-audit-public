@@ -1,0 +1,26 @@
+path,kind,scope,description
+AUDIT_PUBLIC_POLICY.md,file,repository_documentation,"Public-side policy for ledger coverage, meaningful comments, correction rows, and publisher-computed proof fields."
+DIRECTORY_INDEX.md,file,repository_documentation,Human-readable map of public repository directories and important files.
+LEDGER_COMMENT_GUIDE.md,file,repository_documentation,Guide for writing artifact comments that describe file contents instead of repository maintenance actions.
+PUBLICATION_PROTOCOL.md,file,repository_documentation,Strategy-neutral description of the producer-to-publisher-to-private-artifact-to-public-ledger workflow.
+README.md,file,repository_documentation,"Human overview of the public repository role, active ledger, and legacy boundary."
+ledger.csv,file,active_public_ledger,Active public hash ledger. Each row should describe one active private artifact and record its SHA256 and audit metadata.
+legacy,directory,repository_documentation,Container for deprecated public material retained for transparency but excluded from active ledger scope.
+legacy/old,directory,deprecated_legacy,Deprecated pre-migration public material retained for historical transparency; excluded from active audit claims.
+legacy/old/README.md,file,deprecated_legacy,Deprecated pre-migration public file retained for transparency and excluded from active scope.
+legacy/old/corrections,directory,deprecated_legacy,Deprecated pre-migration public file retained for transparency and excluded from active scope.
+legacy/old/corrections/2026-05-01_candles_cost_metadata_correction,directory,deprecated_legacy,Deprecated pre-migration public file retained for transparency and excluded from active scope.
+legacy/old/corrections/2026-05-01_candles_cost_metadata_correction/CORRECTION.md,file,deprecated_legacy,Human explanation of an old public correction package; retained with legacy material.
+legacy/old/corrections/2026-05-01_candles_cost_metadata_correction/sha256_manifest.csv,file,deprecated_legacy,SHA256 manifest from an old public correction package; retained with legacy material.
+legacy/old/legacy_ledger.csv,file,deprecated_legacy,Deprecated public ledger from the old non-causal single-strategy layout; retained for historical transparency only.
+legacy/old/original_AUDIT_PUBLIC_POLICY.md,file,deprecated_legacy,Original public audit policy from before migration; retained to document the historical state.
+legacy/old/original_README.md,file,deprecated_legacy,Original public README from before migration; retained to document the historical state.
+legacy/old/snapshots,directory,deprecated_legacy,Deprecated pre-migration public file retained for transparency and excluded from active scope.
+legacy/old/snapshots/.gitkeep,file,deprecated_legacy,Deprecated old public snapshot placeholder or snapshot material; retained only as historical context.
+legacy/old/test_please_ignore,directory,deprecated_legacy,Deprecated pre-migration public file retained for transparency and excluded from active scope.
+legacy/old/test_please_ignore/ledger_test.csv,file,deprecated_legacy,Deprecated test ledger from the old publication script; retained only as historical context.
+migration_repair_long_paths.json,file,repository_documentation,Machine-readable record of the path-shortening repair used to avoid Windows/Git path-length problems.
+migration_report.json,file,repository_documentation,Machine-readable record of the migration from the old single-strategy public layout to the active multi-strategy ledger.
+scope.md,file,repository_documentation,Defines active public audit scope and explains that legacy material is outside active publication claims.
+semantic_documentation_report.json,file,repository_documentation,Repository file used by the public audit ledger layout.
+strategy_registry.csv,file,repository_documentation,Registry of active and deprecated strategy ids and their publication status.

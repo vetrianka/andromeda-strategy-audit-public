@@ -1,40 +1,67 @@
 # Public Audit Policy
 
-This repository stores public SHA256 commitments for private strategy audit files.
+This repository stores public SHA256 commitments and audit metadata for active private artifacts.
 
-It must not contain private strategy signals, target weights, model scores, private returns, raw market data, or internal research artifacts.
+The protocol is strategy-neutral:
 
-## Scope boundary
+`multi_strategy_audit_publication_v1`
 
-The active audit scope starts with the migration commit that creates `scope.md`.
+`orion` is a strategy id. It is not the name of the publication protocol.
 
-Legacy non-causal material is archived under:
+## What belongs in the public ledger
 
-`legacy/old/`
+`ledger.csv` should contain one row for each active publishable private artifact under:
 
-Archived legacy material is retained for transparency but excluded from active causal audit claims.
+`artifacts/{strategy_id}/{period}/...`
 
-## Ledger rule
+The ledger should not describe repository maintenance commits. It should describe the artifact itself.
 
-The active ledger is `ledger.csv`.
+## What does not belong in the active ledger
 
-The publisher computes and records:
+The active ledger should not cover:
 
-- SHA256;
-- file size;
-- row count when applicable;
-- publication timestamp;
-- timeliness status;
-- private commit id;
-- public commit id when available;
-- publisher run id.
+- `README.md`
+- `scope.md`
+- policy files
+- `strategy_registry.csv`
+- `migration_report.json`
+- `.gitkeep`
+- `.gitignore`
+- `.gitattributes`
+- files under `legacy/old/`
 
-Owner-supplied manifest fields such as `comment`, `notes`, `source_script`, and `methodology_version` are copied into the ledger. The publisher must not invent the business meaning of a file.
+## Meaningful comments
+
+The `comment` field must explain what the artifact contains and why it was published.
+
+Bad comment:
+
+`Improve public audit repository semantic documentation`
+
+Good comment:
+
+`Monthly Orion report for June 2026. Contains the monthly performance summary, drawdown review, exposure statistics, and reconciliation tables for the active publication stream.`
+
+## Publisher-computed fields
+
+The publisher computes and records technical proof fields, including:
+
+- `sha256`
+- `file_size_bytes`
+- `row_count`
+- `created_utc`
+- `published_utc`
+- `publication_cutoff_utc`
+- `timeliness_status`
+- `private_commit`
+- `public_commit`
+- `publisher_run_id`
 
 ## Correction rule
 
-Never edit a published ledger row to make a different file appear original. Publish a correction row with a new artifact path, `correction_of`, and `supersedes_sha256`.
+Do not edit an old ledger row to make a changed file appear original.
 
-## Daily target cutoff rule
+Publish a new row and link it with:
 
-When a strategy defines a next-open execution rule, its daily target hash must be published before the strategy-specific cutoff. Late files may be recorded with `timeliness_status = late_ignored`, but they are not valid for that rebalance.
+- `correction_of`
+- `supersedes_sha256`
