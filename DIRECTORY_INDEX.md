@@ -49,3 +49,7 @@ Deprecated pre-migration public material. Kept for transparency and excluded fro
 `legacy/old/legacy_ledger.csv`
 
 Old public ledger from the deprecated non-causal single-strategy layout. Historical only.
+
+## File role
+
+This file is the human-readable map of the public repository. It explains which files are active ledger documents, which files are policy documents, and which directories contain deprecated legacy material.
